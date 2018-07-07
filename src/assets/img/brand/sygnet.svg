@@ -1,17 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="173.2px" height="200px" viewBox="0 0 173.2 200" enable-background="new 0 0 173.2 200" xml:space="preserve">
-<polygon fill="#ED1C24" points="0,150 0,50 86.6,0 173.2,50 173.2,150 86.6,200 "/>
-<polygon fill="#FFFFFF" points="86.6,133.3 57.7,116.7 57.7,83.3 86.6,66.7 115.5,83.3 144.3,66.7 86.6,33.3 28.9,66.7 28.9,133.3 
-	86.6,166.7 144.3,133.3 115.5,116.7 "/>
-<polygon opacity="0.04" stroke="#FFFFFF" stroke-miterlimit="10" enable-background="new    " points="0,50 86.6,100 86.6,0 "/>
-<polygon opacity="0.04" stroke="#FFFFFF" stroke-miterlimit="10" enable-background="new    " points="0,150 86.6,200 86.6,100 "/>
-<polygon opacity="0.08" stroke="#FFFFFF" stroke-miterlimit="10" enable-background="new    " points="86.6,100 173.2,150 173.2,50 
-	"/>
-<polygon fill-opacity="0" points="86.6,100 0,50 0,150 "/>
-<polygon opacity="0.08" stroke="#FFFFFF" stroke-miterlimit="10" enable-background="new    " points="173.2,150 86.6,100 86.6,200 
-	"/>
-<polygon opacity="0.08" stroke="#FFFFFF" stroke-miterlimit="10" enable-background="new    " points="173.2,50 86.6,0 86.6,100 "/>
+<!-- Creator: CorelDRAW 2018 (64 Bit Versão de avaliação) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="210mm" height="297mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 21000 29700"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="777" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="900">
+	<font-face 
+		font-family="Arial Black">
+		<font-face-src>
+			<font-face-name name="Arial Black Normal"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="P" horiz-adv-x="722" d="M71.9971 715.999l368.001 0c80.1666,0 140.168,-19.0002 180.167,-57.1625 39.8366,-38.1703 59.8318,-92.5018 59.8318,-163.003 0,-72.3368 -21.8313,-128.998 -65.332,-169.668 -43.5008,-40.8315 -109.998,-61.1664 -199.329,-61.1664l-121.338 0 0 -265 -222.001 0 0 715.999zm222.001 -306.002l54.5013 0c42.9993,0 73.1699,7.50627 90.5039,22.3328 17.3259,14.8346 25.9969,33.8348 25.9969,57.0007 0,22.5026 -7.49818,41.5029 -22.6644,57.1706 -15.0044,15.6677 -43.339,23.4975 -85.0036,23.4975l-63.3341 0 0 -160.002z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial Black";font-variant:normal;font-style:normal;font-weight:900;src:url("#FontID0") format(svg)}
+    .fil0 {fill:#ED3237}
+    .fnt0 {font-weight:900;font-size:1236.3px;font-family:'Arial Black'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Camada_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <text x="13258.63" y="14859.81"  class="fil0 fnt0">P</text>
+ </g>
 </svg>

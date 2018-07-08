@@ -52,6 +52,7 @@
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.2.1",
     "simple-line-icons": "^2.4.1",
+    "sweetalert": "^2.1.0",
     "ts-helpers": "^1.1.2",
     "zone.js": "^0.8.26"
   },

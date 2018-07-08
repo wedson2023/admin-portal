@@ -1,3 +1,5 @@
+import { DashboardModule } from './views/dashboard/dashboard.module';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -54,7 +56,8 @@ import { NoticiasComponent } from './content/noticias/noticias.component';
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    DashboardModule
   ],
   declarations: [
     AppComponent,

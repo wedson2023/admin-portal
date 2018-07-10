@@ -1,4 +1,6 @@
 import { DashboardModule } from './views/dashboard/dashboard.module';
+import { DashboardResolver } from './views/dashboard/dashboard.resolver'
+import { EditorModule } from '@tinymce/tinymce-angular';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
@@ -17,8 +19,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 import { AppComponent } from './app.component';
 
 import { DefaultLayoutComponent } from './containers';
-
-import { LoginComponent } from './views/login/login.component';
 
 const APP_CONTAINERS = [
   DefaultLayoutComponent
@@ -39,8 +39,10 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
-import { GuiaComercialComponent } from './content/guia-comercial/guia-comercial.component';
-import { NoticiasComponent } from './content/noticias/noticias.component';
+
+import { LoginComponent } from './views/login/login.component';
+import { GuiaComercialComponent } from './views/guia-comercial/guia-comercial.component';
+import { NoticiasComponent } from './views/noticias/noticias.component';
 
 @NgModule({
   imports: [
@@ -57,7 +59,8 @@ import { NoticiasComponent } from './content/noticias/noticias.component';
     ChartsModule,
     DashboardModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    EditorModule
   ],
   declarations: [
     AppComponent,
@@ -67,6 +70,7 @@ import { NoticiasComponent } from './content/noticias/noticias.component';
     NoticiasComponent
   ],
   providers: [
+    DashboardResolver,
     {
     provide: LocationStrategy,
     useClass: HashLocationStrategy

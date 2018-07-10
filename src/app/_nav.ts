@@ -10,22 +10,32 @@ export const navItems = [
   },
   {
     name: 'Notícias',
-    url: '/content/noticias',
+    url: '/noticias',
     icon: 'icon-envelope-letter'
   },
   {
     name: 'Guia comercial',
-    url: '/content/guia-comercial',
+    url: '/guia-comercial',
     icon: 'icon-map'
   },
   {
     name: 'Agenda de eventos',
-    url: '/content/agenda-de-eventos',
+    url: '/agenda-de-eventos',
     icon: 'icon-directions'
+  },  
+  {
+    name: 'Categorias',
+    url: '/categorias',
+    icon: 'icon-folder'
+  },  
+  {
+    name: 'Segmentos',
+    url: '/segmentos',
+    icon: 'icon-tag'
   },
   {
     name: 'Banner',
-    url: '/content/banner',
+    url: '/banner',
     icon: 'icon-doc'
   },
   {
@@ -34,22 +44,32 @@ export const navItems = [
   },
   {
     name: 'Notícias',
-    url: '/content/listar-noticias',
+    url: '/listar-noticias',
     icon: 'icon-envelope-letter'
   },
   {
     name: 'Guia comercial',
-    url: '/content/listar-guia-comercial',
+    url: '/listar-guia-comercial',
     icon: 'icon-map'
   },
   {
     name: 'Agenda de eventos',
-    url: '/content/listar-agenda-de-eventos',
+    url: '/listar-agenda-de-eventos',
     icon: 'icon-directions'
   },
   {
     name: 'Banner',
-    url: '/content/listar-banner',
+    url: '/listar-banner',
     icon: 'icon-doc'
+  },  
+  {
+    name: 'Categorias',
+    url: '/listar-categorias',
+    icon: 'icon-folder'
+  },  
+  {
+    name: 'Segmentos',
+    url: '/listar-segmentos',
+    icon: 'icon-tag'
   }
 ];

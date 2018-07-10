@@ -32,6 +32,7 @@ export class LoginComponent {
         sessionStorage.setItem('usuario', JSON.stringify(response));
         this.router.navigate(['dashboard']);
       }, err => {
+        console.log(err);
         swal('Erro', err.error.resposta, 'error');
       })
     } 

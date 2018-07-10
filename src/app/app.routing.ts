@@ -1,11 +1,11 @@
 import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { NoticiasComponent } from './content/noticias/noticias.component';
-import { GuiaComercialComponent } from './content/guia-comercial/guia-comercial.component';
+import { DashboardResolver } from './views/dashboard/dashboard.resolver';
+import { NoticiasComponent } from './views/noticias/noticias.component';
+import { GuiaComercialComponent } from './views/guia-comercial/guia-comercial.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DefaultLayoutComponent } from './containers';
-
 import { LoginComponent } from './views/login/login.component';
 
 export const routes: Routes = [  
@@ -25,14 +25,15 @@ export const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        resolve: { data: DashboardResolver }
       },
       {
-        path: 'content/guia-comercial',
+        path: 'guia-comercial',
         component: GuiaComercialComponent
       },
       {
-        path: 'content/noticias',
+        path: 'noticias',
         component: NoticiasComponent
       }
       // {

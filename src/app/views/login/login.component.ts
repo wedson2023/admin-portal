@@ -29,7 +29,7 @@ export class LoginComponent {
     }
     else
     {
-      this.http.getApiPost('login', usuario).subscribe(response => {
+      this.http.ApiPost('login', usuario).subscribe(response => {
         sessionStorage.setItem('usuario', JSON.stringify(response));
         this.router.navigate(['dashboard']); 
       }, err => {

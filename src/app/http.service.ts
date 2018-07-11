@@ -18,12 +18,21 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
+  ApiWithUpload(url, data){ 
+    let headers = {
+    headers: new HttpHeaders({     
+      'Authorization' : this.token
+    })
+  }
 
-  getApiPost(url, data){
+    return this.http.post(this.endPoint + url, data, headers);
+  }
+
+  ApiPost(url, data){
     return this.http.post(this.endPoint + url, data, this.headers);
   }
 
-  getApiGet(url){
+  ApiGet(url){
     return this.http.get(this.endPoint + url, this.headers);
   }
 }

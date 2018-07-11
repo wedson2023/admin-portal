@@ -12,6 +12,6 @@ export class DashboardResolver implements Resolve<Observable<any>> {
   constructor(private http: HttpService) {}
 
   resolve() {
-    return this.http.getApiGet('dashboard');
+    return this.http.ApiGet('dashboard');
   }
 }

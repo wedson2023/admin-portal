@@ -1,9 +1,7 @@
-import { DashboardModule } from './views/dashboard/dashboard.module';
 import { DashboardResolver } from './views/dashboard/dashboard.resolver'
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -17,7 +15,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 import { AppComponent } from './app.component';
-
 import { DefaultLayoutComponent } from './containers';
 
 const APP_CONTAINERS = [
@@ -36,28 +33,30 @@ import {
 import { AppRoutingModule } from './app.routing';
 
 // Import 3rd party components
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { TabsModule } from 'ngx-bootstrap/tabs';
+//import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+//import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 import { LoginComponent } from './views/login/login.component';
 import { GuiaComercialComponent } from './views/guia-comercial/guia-comercial.component';
 import { NoticiasComponent } from './views/noticias/noticias.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { AuthGuardService } from './guards/auth-guard.service';
+import { AuthService } from './guards/auth.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     AppAsideModule,
-    AppBreadcrumbModule.forRoot(),
+    //AppBreadcrumbModule.forRoot(),
     AppFooterModule,
     AppHeaderModule,
     AppSidebarModule,
     PerfectScrollbarModule,
-    BsDropdownModule.forRoot(),
-    TabsModule.forRoot(),
+    //BsDropdownModule.forRoot(),
+    //TabsModule.forRoot(),
     ChartsModule,
-    DashboardModule,
     FormsModule,
     HttpClientModule,
     EditorModule
@@ -67,9 +66,12 @@ import { NoticiasComponent } from './views/noticias/noticias.component';
     ...APP_CONTAINERS,
     LoginComponent,
     GuiaComercialComponent,
-    NoticiasComponent
+    NoticiasComponent,
+    DashboardComponent
   ],
   providers: [
+    AuthService,
+    AuthGuardService,
     DashboardResolver,
     {
     provide: LocationStrategy,

@@ -14,33 +14,19 @@ export class DashboardComponent implements OnInit {
   constructor(private route: ActivatedRoute){
     this.data_dashboard = this.route.snapshot.data.data.resposta;
     this.trafego = this.data_dashboard.trafego;
-
-    console.log(this.trafego.dias.length);
   }
 
   // mainChart
 
   public mainChartData1: Array<number> = [];
-  //public mainChartData2: Array<number> = [];
-  //public mainChartData3: Array<number> = [];
 
   public mainChartData: Array<any> = [
     {
       data: this.mainChartData1,
       label: 'Visitas'
-    },
-    // {
-    //   data: this.mainChartData2,
-    //   label: 'Previous'
-    // },
-    // {
-    //   data: this.mainChartData3,
-    //   label: 'BEP'
-    // }
+    }
   ];
-  /* tslint:disable:max-line-length */
-  
-  /* tslint:enable:max-line-length */
+
   public mainChartOptions: any = {
     tooltips: {
       enabled: false,

@@ -39,6 +39,16 @@ export const navItems = [
     icon: 'icon-doc'
   },
   {
+    name: 'Contato',
+    url: '/contato',
+    icon: 'icon-phone'
+  },
+  {
+    name: 'Agenda de show',
+    url: '/agenda-de-show',
+    icon: 'icon-equalizer'
+  },
+  {
     title: true,
     name: 'Listas'
   },
@@ -71,5 +81,15 @@ export const navItems = [
     name: 'Segmentos',
     url: '/listar-segmentos',
     icon: 'icon-tag'
-  }
+  },
+  {
+    name: 'Contato',
+    url: '/listar-contato',
+    icon: 'icon-phone'
+  },
+  {
+    name: 'Agenda de show',
+    url: '/listar-agenda-de-show',
+    icon: 'icon-equalizer'
+  },
 ];

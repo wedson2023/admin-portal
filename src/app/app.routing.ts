@@ -1,3 +1,4 @@
+import { ListarGuiaComercialComponent } from './views/listar-guia-comercial/listar-guia-comercial.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { DashboardResolver } from './views/dashboard/dashboard.resolver';
@@ -37,7 +38,14 @@ export const routes: Routes = [
       {
         path: 'noticias',
         component: NoticiasComponent
-      }
+      },
+
+      // listas
+
+      {
+        path: 'listar-guia-comercial',
+        component: ListarGuiaComercialComponent
+      },
     ]
   }
 ];

@@ -8,10 +8,12 @@ export class AuthService {
 
   verifica;
 
-  constructor(private http: HttpService) {}  
+  constructor(private http: HttpService) {
+    
+  }  
 
   validaSessao(){
-    this.http.ApiGet('validar-sessao').subscribe((response:any) => {      
+    this.http.ApiGet('validar-sessao').subscribe((response:any) => {           
         this.verifica = response.resposta;
     }, err => {
       this.verifica = false;

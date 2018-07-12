@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import { AuthService } from './auth.service';
 import { HttpService } from './../http.service';
 import { Injectable } from '@angular/core';
@@ -18,10 +19,10 @@ export class AuthGuardService implements CanActivate  {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ) : boolean {
-    this.auth.validaSessao();
+  ) : Observable<boolean> | boolean {
+    let valida = JSON.parse(sessionStorage.getItem('usuario')) ? true : false;
 
-    if(!this.auth.getLogado())   
+    if(!valida)   
     {
       swal('Error', 'Você não tem autorização.', 'error'); 
       this.router.navigate(['']);     
@@ -30,6 +31,6 @@ export class AuthGuardService implements CanActivate  {
     else
     {
       return true;
-    }   
+    } 
   }
 }

@@ -35,4 +35,8 @@ export class HttpService {
   ApiGet(url){
     return this.http.get(this.endPoint + url, this.headers);
   }
+
+  ApiGetNavigate(url){
+    return this.http.get(url, this.headers);
+  }
 }

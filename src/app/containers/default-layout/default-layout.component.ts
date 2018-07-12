@@ -27,7 +27,7 @@ export class DefaultLayoutComponent {
   }
 
   logout(){
-    this.http.getApiGet('logout').subscribe((response:any) => {
+    this.http.ApiGet('logout').subscribe((response:any) => {
       this.router.navigate(['']); 
     })
   }

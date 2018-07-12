@@ -1,5 +1,5 @@
 import { HttpService } from './../../http.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import swal from 'sweetalert';
 
 @Component({
@@ -21,7 +21,7 @@ export class NoticiasComponent{
   };
 
   plugins:object = {
-    language: 'pt_BR',
+    language_url: 'http://portal.test/tinymce_langs/pt_BR.js',
     toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
     plugins: 'advlist autolink link image lists charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor'
   };
@@ -50,7 +50,7 @@ export class NoticiasComponent{
     this.http.ApiWithUpload('noticias/cadastro', this.payload).subscribe((response:any) => {
       swal('Sucesso', 'Cadastro realizado com sucesso.', 'success');
     }, err => {
-      swal('Error', err.error.resposta, 'error');
+      swal('Error', err.message, 'error');
     })
   }
 

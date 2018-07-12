@@ -43,6 +43,7 @@ import { NoticiasComponent } from './views/noticias/noticias.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { AuthService } from './guards/auth.service';
+import { ListarGuiaComercialComponent } from './views/listar-guia-comercial/listar-guia-comercial.component';
 
 @NgModule({
   imports: [
@@ -67,7 +68,8 @@ import { AuthService } from './guards/auth.service';
     LoginComponent,
     GuiaComercialComponent,
     NoticiasComponent,
-    DashboardComponent
+    DashboardComponent,
+    ListarGuiaComercialComponent
   ],
   providers: [
     AuthService,

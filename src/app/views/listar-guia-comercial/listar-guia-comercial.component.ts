@@ -1,6 +1,7 @@
 import { HttpService } from './../../http.service';
 import { Component, OnInit } from '@angular/core';
 import {NgProgressService} from "ng2-progressbar";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-guia-comercial',
@@ -10,7 +11,11 @@ import {NgProgressService} from "ng2-progressbar";
 export class ListarGuiaComercialComponent implements OnInit {
 
   private empresas;
-  constructor(private http: HttpService, private progresso: NgProgressService) { }
+  constructor(private http: HttpService, private progresso: NgProgressService, private router: Router) { }
+
+  editar(data){
+    this.router.navigate(['/editar-guia-comercial/', data.id]);
+  }
 
   deletar(data){
     swal({
@@ -46,17 +51,23 @@ export class ListarGuiaComercialComponent implements OnInit {
   }
 
   next(){
+    this.progresso.start();
     this.http.ApiGetNavigate(this.empresas.next_page_url).subscribe((response:any) => {
+      this.progresso.done();
       this.empresas = response.registros;
     }, err => {
+      this.progresso.done();
       return false;
     });
   }
 
   prev(){
+    this.progresso.start();
     this.http.ApiGetNavigate(this.empresas.prev_page_url).subscribe((response:any) => {
+      this.progresso.done();
       this.empresas = response.registros;
     }, err => {
+      this.progresso.done();
       return false;
     });
   }

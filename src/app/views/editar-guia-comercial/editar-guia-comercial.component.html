@@ -1,0 +1,107 @@
+<div class="animated fadeIn">
+    <div class="card card-default">
+      <div class="card-header">
+        <i class="icon-map"></i>Cadastro guia comercial
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="cadastrar()">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input required [(ngModel)]="dados.nome" name="nome" type="text" class="form-control" id="nome" placeholder="Nome da empresa">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="capa">Capa</label>
+                <input required #arquivo (change)="onChangeCapa($event)" type="file" style="padding: 3px 0.75rem !important;" class="form-control" id="capa">
+              </div>
+            </div>
+          </div> <!-- fim row -->
+          <div class="row">
+            <div class="col">
+              <div class="form-group" >
+                <label for="endereco">Endereço</label>
+                <input required [(ngModel)]="dados.endereco" name="endereco" type="text" class="form-control" id="endereco" placeholder="Endereço da empresa">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="telefones">Telefones</label>
+                <input required [(ngModel)]="dados.telefones" name="telefones" type="text" class="form-control" id="telefones" placeholder="Telefones da empresa">
+              </div>
+            </div>
+          </div> <!-- fim row -->
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="ativo">Ativo</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="ativo">Opções</label>
+                  </div>
+                  <select required [(ngModel)]="dados.ativo" name="ativo" class="custom-select" id="ativo">
+                    <option value="">Selecione um item</option>
+                    <option selected value="1">Ativo</option>
+                    <option value="0">Inativo</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="formas_pagamento">Formas de pagamentos</label>
+                <input required [(ngModel)]="dados.formas_pagamento" name="formas_pagamento" type="text" class="form-control" id="formas_pagamento" placeholder="Formas de pagamento da empresa">
+              </div>
+            </div>
+          </div> <!-- fim row -->
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="horario">Horários:</label>
+                <input required [(ngModel)]="dados.horario" name="horario" type="text" class="form-control" id="horario" placeholder="Horários da empresa">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="site">Site:</label>
+                <input required [(ngModel)]="dados.contato.site" name="site" type="text" class="form-control" id="site" placeholder="Site da empresa">
+              </div>
+            </div>
+          </div> <!-- fim row -->
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input required [(ngModel)]="dados.contato.email" name="email" type="text" class="form-control" id="email" placeholder="Email da empresa">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="facebook">Facebook:</label>
+                <input required [(ngModel)]="dados.contato.facebook" name="facebook" type="text" class="form-control" id="facebook" placeholder="Facebook empresa">
+              </div>
+            </div>
+          </div> <!-- fim row -->
+          <div class="row">
+            <div class="col">
+              <editor [(ngModel)]="dados.template" name="template" [init]="plugins"></editor>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                  <button type="button" type="submit" class="btn btn-primary rounded-0 mr-1">Atualizar</button>
+                  <button type="button" (click)="limpar()" class="btn btn-secondary rounded-0">Limpar</button>
+                </div>
+              </div>
+            </div>
+            <div class="col"></div>
+          </div> <!-- fim row -->
+        </form>
+      </div>
+    </div>
+  </div>
+

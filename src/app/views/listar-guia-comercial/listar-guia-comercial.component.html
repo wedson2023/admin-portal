@@ -20,7 +20,7 @@
             <td style="width: 30%"><span class="text-nowrap" style="width: 15rem; display: block;">{{ empresa?.endereco }}</span></td>
             <td style="width: 30%"><span class="text-nowrap" style="width: 15rem; display: block;">{{ empresa?.telefones }}</span></td>
             <td style="width: 10%">
-              <button class="btn btn-sm btn-warning mr-1"><i class="fa fa-pencil"></i></button>
+              <button (click)="editar(empresa)" class="btn btn-sm btn-warning mr-1"><i class="fa fa-pencil"></i></button>
               <button (click)="deletar(empresa)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
             </td>
           </tr>

@@ -1,3 +1,4 @@
+import { EditarGuiaComercialComponent } from './views/editar-guia-comercial/editar-guia-comercial.component';
 import { ListarGuiaComercialComponent } from './views/listar-guia-comercial/listar-guia-comercial.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
@@ -45,6 +46,13 @@ export const routes: Routes = [
       {
         path: 'listar-guia-comercial',
         component: ListarGuiaComercialComponent
+      },
+
+      // editar
+
+      {
+        path: 'editar-guia-comercial/:id',
+        component: EditarGuiaComercialComponent
       },
     ]
   }

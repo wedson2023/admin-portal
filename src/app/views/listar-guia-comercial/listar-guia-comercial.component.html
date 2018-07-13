@@ -4,6 +4,7 @@
       <i class="icon-map"></i>Cadastro guia comercial
     </div>
     <div class="card-body">
+      <p [hidden]="empresas?.data" class="text-muted text-center">Não há empresas cadastradas</p>
       <table class="table table-hover table-sm">
         <thead>
           <tr>
@@ -20,7 +21,7 @@
             <td style="width: 30%"><span class="text-nowrap" style="width: 15rem; display: block;">{{ empresa?.telefones }}</span></td>
             <td style="width: 10%">
               <button class="btn btn-sm btn-warning mr-1"><i class="fa fa-pencil"></i></button>
-              <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+              <button (click)="deletar(empresa)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
             </td>
           </tr>
         </tbody>

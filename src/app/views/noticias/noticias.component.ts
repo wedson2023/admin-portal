@@ -1,6 +1,7 @@
 import { HttpService } from './../../http.service';
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef} from '@angular/core';
 import swal from 'sweetalert';
+import {NgProgressService} from "ng2-progressbar";
 
 @Component({
   selector: 'app-noticias',
@@ -26,11 +27,27 @@ export class NoticiasComponent{
     plugins: 'advlist autolink link image lists charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor'
   };
 
-  constructor(private http: HttpService) {}
+  @ViewChild('arquivo') arquivo: ElementRef;
+
+  constructor(private http: HttpService, private progresso: NgProgressService) {}
   
   onChangeCapa(event){
     this.dados['capa'] = event.target.files[0];
     this.payload.append('capa', event.target.files[0]);
+  }
+
+  limpar(){
+    this.dados = {
+      fonte : null,
+      capa : null,
+      titulo : null,
+      subtitulo : null,
+      ativo : 1,
+      destaque : 0,
+      template : null
+    };
+
+    this.arquivo.nativeElement.value = '';
   }
 
   cadastrar(){
@@ -39,6 +56,8 @@ export class NoticiasComponent{
       swal('Atenção', 'Os campos são requeridos', 'warning');
       return false;   
     }
+
+    this.progresso.start();
   
     this.payload.append('fonte', this.dados['fonte']);
     this.payload.append('titulo', this.dados['titulo']);
@@ -49,8 +68,10 @@ export class NoticiasComponent{
 
     this.http.ApiWithUpload('noticias/cadastro', this.payload).subscribe((response:any) => {
       swal('Sucesso', 'Cadastro realizado com sucesso.', 'success');
+      this.progresso.done();
     }, err => {
       swal('Error', err.message, 'error');
+      this.progresso.done();
     })
   }
 

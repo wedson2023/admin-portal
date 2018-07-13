@@ -4,6 +4,7 @@ import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgProgressModule } from 'ng2-progressbar';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
@@ -50,6 +51,7 @@ import { ListarGuiaComercialComponent } from './views/listar-guia-comercial/list
     BrowserModule,
     AppRoutingModule,
     AppAsideModule,
+    NgProgressModule,
     //AppBreadcrumbModule.forRoot(),
     AppFooterModule,
     AppHeaderModule,

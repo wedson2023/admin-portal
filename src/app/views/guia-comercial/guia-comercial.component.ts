@@ -1,6 +1,7 @@
 import { HttpService } from './../../http.service';
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import swal from 'sweetalert';
+import {NgProgressService} from "ng2-progressbar";
 
 @Component({
   selector: 'app-guia-comercial',
@@ -21,7 +22,9 @@ export class GuiaComercialComponent {
     contato : {}
   };
 
-  constructor(private http: HttpService) {}
+  @ViewChild('arquivo') arquivo: ElementRef;
+
+  constructor(private http: HttpService, private progresso: NgProgressService) {}
   
   onChangeCapa(event){
     this.dados['capa'] = event.target.files[0];
@@ -34,12 +37,34 @@ export class GuiaComercialComponent {
     plugins: 'advlist autolink link image lists charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor'
   };
 
+  limpar(){
+    this.dados = {
+      nome : null,
+      capa : null,
+      endereco : null,
+      telefones : null,
+      horario : null,
+      formas_pagamento : null,
+      ativo : 1,
+      template : null,
+      contato : {
+        site : null,
+        email : null,
+        facebook : null
+      }     
+    };
+
+    this.arquivo.nativeElement.value = '';
+  }
+
   cadastrar(){
     if(!this.dados['nome'] || this.dados['ativo'] == null)
     {
       swal('Atenção', 'Os campos nome e ativo são requeridos', 'warning');
       return false;   
     }
+
+    this.progresso.start();
   
     this.payload.append('nome', this.dados['nome']);
     this.payload.append('endereco', this.dados['endereco']);
@@ -54,8 +79,11 @@ export class GuiaComercialComponent {
     this.payload.append('contato[facebook]', (this.dados['contato'].facebook || null));
 
     this.http.ApiWithUpload('guia-comercial/cadastro', this.payload).subscribe((response:any) => {
+      this.limpar();
       swal('Sucesso', 'Cadastro realizado com sucesso.', 'success');
+      this.progresso.done();
     }, err => {
+      this.progresso.done();
       swal('Error', err.message, 'error');
     })
   }

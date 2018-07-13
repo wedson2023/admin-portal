@@ -15,7 +15,7 @@
             <div class="col">
               <div class="form-group">
                 <label for="capa">Capa</label>
-                <input required  (change)="onChangeCapa($event)" type="file" style="padding: 3px 0.75rem !important;" class="form-control" id="capa">
+                <input required #arquivo (change)="onChangeCapa($event)" type="file" style="padding: 3px 0.75rem !important;" class="form-control" id="capa">
               </div>
             </div>
           </div> <!-- fim row -->

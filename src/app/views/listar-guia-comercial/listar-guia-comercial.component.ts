@@ -1,5 +1,6 @@
 import { HttpService } from './../../http.service';
 import { Component, OnInit } from '@angular/core';
+import {NgProgressService} from "ng2-progressbar";
 
 @Component({
   selector: 'app-listar-guia-comercial',
@@ -9,14 +10,38 @@ import { Component, OnInit } from '@angular/core';
 export class ListarGuiaComercialComponent implements OnInit {
 
   private empresas;
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService, private progresso: NgProgressService) { }
+
+  deletar(data){
+    swal({
+      title: "Atenção",
+      text: "Tem certeza que deseja deletar esse registro?",
+      icon: "warning",
+      dangerMode: true
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        this.progresso.start();
+        this.http.ApiPost('guia-comercial/deletar', { id : data.id }).subscribe((response) => {
+          swal('Sucesso', 'Registro deletado com sucesso.', 'success');
+          this.empresas.data.splice(this.empresas.data.indexOf(data), 1);
+          this.progresso.done();
+        }, err => {
+          swal('Error', err.error, 'error');
+          this.progresso.done();
+        });
+      }
+    });    
+  }
 
   ngOnInit() {
+    this.progresso.start();
     this.http.ApiGet('guia-comercial/listar').subscribe((response:any) => {
-      console.log(response);
+      this.progresso.done();
       this.empresas = response.registros;
     }, err => {
       swal('Erro', err.error.resposta, 'error');
+      this.progresso.done();
     });
   }
 
@@ -24,7 +49,7 @@ export class ListarGuiaComercialComponent implements OnInit {
     this.http.ApiGetNavigate(this.empresas.next_page_url).subscribe((response:any) => {
       this.empresas = response.registros;
     }, err => {
-      swal('Erro', err.error.resposta, 'error');
+      return false;
     });
   }
 
@@ -32,7 +57,7 @@ export class ListarGuiaComercialComponent implements OnInit {
     this.http.ApiGetNavigate(this.empresas.prev_page_url).subscribe((response:any) => {
       this.empresas = response.registros;
     }, err => {
-      swal('Erro', err.error.resposta, 'error');
+      return false;
     });
   }
 

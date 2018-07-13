@@ -48,6 +48,8 @@ import { ListarGuiaComercialComponent } from './views/listar-guia-comercial/list
 import { EditarGuiaComercialComponent } from './views/editar-guia-comercial/editar-guia-comercial.component';
 import { ListarNoticiasComponent } from './views/listar-noticias/listar-noticias.component';
 import { EditarNoticiasComponent } from './views/editar-noticias/editar-noticias.component';
+import { BotoesComponent } from './views/botoes/botoes.component';
+import { ListarBotoesComponent } from './views/listar-botoes/listar-botoes.component';
 
 @NgModule({
   imports: [
@@ -77,7 +79,9 @@ import { EditarNoticiasComponent } from './views/editar-noticias/editar-noticias
     ListarGuiaComercialComponent,
     EditarGuiaComercialComponent,
     ListarNoticiasComponent,
-    EditarNoticiasComponent
+    EditarNoticiasComponent,
+    BotoesComponent,
+    ListarBotoesComponent
   ],
   providers: [
     AuthService,

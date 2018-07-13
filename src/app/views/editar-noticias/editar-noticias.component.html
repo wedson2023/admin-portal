@@ -15,7 +15,7 @@
             <div class="col">
               <div class="form-group">
                 <label for="capa">Capa</label>
-                <input required #arquivo (change)="onChangeCapa($event)" type="file" style="padding: 3px 0.75rem !important;" class="form-control" id="capa">
+                <input accept="image/jpeg" required #arquivo (change)="onChangeCapa($event)" type="file" style="padding: 3px 0.75rem !important;" class="form-control" id="capa">
               </div>
             </div>
           </div> <!-- fim row -->
@@ -74,7 +74,7 @@
             <div class="col">
               <div class="row">
                 <div class="col">
-                  <button type="button" type="submit" class="btn btn-primary rounded-0 mr-1">Cadastrar</button>
+                  <button type="button" type="submit" class="btn btn-primary rounded-0 mr-1">Atualizar</button>
                   <button type="button" type="reset" class="btn btn-secondary rounded-0">Limpar</button>
                 </div>
               </div>

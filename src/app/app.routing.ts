@@ -1,3 +1,5 @@
+import { ListarBotoesComponent } from './views/listar-botoes/listar-botoes.component';
+import { BotoesComponent } from './views/botoes/botoes.component';
 import { EditarNoticiasComponent } from './views/editar-noticias/editar-noticias.component';
 import { ListarNoticiasComponent } from './views/listar-noticias/listar-noticias.component';
 import { EditarGuiaComercialComponent } from './views/editar-guia-comercial/editar-guia-comercial.component';
@@ -42,6 +44,10 @@ export const routes: Routes = [
         path: 'noticias',
         component: NoticiasComponent
       },
+      {
+        path: 'botoes',
+        component: BotoesComponent
+      },
 
       // listas
 
@@ -52,6 +58,10 @@ export const routes: Routes = [
       {
         path: 'listar-noticias',
         component: ListarNoticiasComponent
+      },
+      {
+        path: 'listar-botoes',
+        component: ListarBotoesComponent
       },
 
       // editar

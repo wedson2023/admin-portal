@@ -1,0 +1,27 @@
+<div class="animated fadeIn">
+  <div class="card card-default">
+    <div class="card-header">
+      <i class="icon-layers"></i>Lista botões
+    </div>
+    <div class="card-body">
+      <p [hidden]="botoes?.data" class="text-muted text-center">Não há botões cadastradas</p>
+      <table class="table table-hover table-sm">
+        <thead>
+          <tr>
+            <th style="width: 90%" scope="col">Nome botões</th>
+            <th style="width: 10%" scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let botao of botoes?.data">
+            <td style="width: 90%"><span class="text-nowrap" style="width: 15rem; display: block;">{{ botao?.nome }}</span></td>                  
+            <td style="width: 10%">
+              <button (click)="deletar(botao)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>     
+

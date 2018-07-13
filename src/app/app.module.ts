@@ -46,6 +46,8 @@ import { AuthGuardService } from './guards/auth-guard.service';
 import { AuthService } from './guards/auth.service';
 import { ListarGuiaComercialComponent } from './views/listar-guia-comercial/listar-guia-comercial.component';
 import { EditarGuiaComercialComponent } from './views/editar-guia-comercial/editar-guia-comercial.component';
+import { ListarNoticiasComponent } from './views/listar-noticias/listar-noticias.component';
+import { EditarNoticiasComponent } from './views/editar-noticias/editar-noticias.component';
 
 @NgModule({
   imports: [
@@ -73,7 +75,9 @@ import { EditarGuiaComercialComponent } from './views/editar-guia-comercial/edit
     NoticiasComponent,
     DashboardComponent,
     ListarGuiaComercialComponent,
-    EditarGuiaComercialComponent
+    EditarGuiaComercialComponent,
+    ListarNoticiasComponent,
+    EditarNoticiasComponent
   ],
   providers: [
     AuthService,

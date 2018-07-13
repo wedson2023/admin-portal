@@ -1,3 +1,5 @@
+import { EditarNoticiasComponent } from './views/editar-noticias/editar-noticias.component';
+import { ListarNoticiasComponent } from './views/listar-noticias/listar-noticias.component';
 import { EditarGuiaComercialComponent } from './views/editar-guia-comercial/editar-guia-comercial.component';
 import { ListarGuiaComercialComponent } from './views/listar-guia-comercial/listar-guia-comercial.component';
 import { AuthGuardService } from './guards/auth-guard.service';
@@ -47,12 +49,20 @@ export const routes: Routes = [
         path: 'listar-guia-comercial',
         component: ListarGuiaComercialComponent
       },
+      {
+        path: 'listar-noticias',
+        component: ListarNoticiasComponent
+      },
 
       // editar
 
       {
         path: 'editar-guia-comercial/:id',
         component: EditarGuiaComercialComponent
+      },
+      {
+        path: 'editar-noticias/:id',
+        component: EditarNoticiasComponent
       },
     ]
   }

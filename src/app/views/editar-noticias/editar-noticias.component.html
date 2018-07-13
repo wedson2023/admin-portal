@@ -1,0 +1,87 @@
+<div class="animated fadeIn">
+    <div class="card card-default">
+      <div class="card-header">
+        <i class="icon-envelope-letter"></i>Cadastro notícias
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="cadastrar()">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="fonte">Fonte</label>
+                <input required [(ngModel)]="dados.fonte" name="fonte" type="text" class="form-control" id="fonte" placeholder="Fonte da notícia">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="capa">Capa</label>
+                <input required #arquivo (change)="onChangeCapa($event)" type="file" style="padding: 3px 0.75rem !important;" class="form-control" id="capa">
+              </div>
+            </div>
+          </div> <!-- fim row -->
+          <div class="row">
+            <div class="col">
+              <div class="form-group" >
+                <label for="titulo">Título</label>
+                <input required [(ngModel)]="dados.titulo" name="titulo" type="text" class="form-control" id="titulo" placeholder="Título da notícia">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="subtitulo">Subtitulo</label>
+                <input required [(ngModel)]="dados.subtitulo" name="subtitulo" type="text" class="form-control" id="subtitulo" placeholder="Subtítulo da notícia">
+              </div>
+            </div>
+          </div> <!-- fim row -->
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="ativo">Ativo</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="ativo">Opções</label>
+                  </div>
+                  <select required [(ngModel)]="dados.ativo" name="ativo" class="custom-select" id="ativo">
+                    <option value="">Selecione um item</option>
+                    <option selected value="1">Ativo</option>
+                    <option value="0">Inativo</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="destaque">Destaque</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="destaque">Opções</label>
+                  </div>
+                  <select required [(ngModel)]="dados.destaque" name="destaque" class="custom-select" id="destaque">
+                    <option value="">Selecione um item</option>
+                    <option value="1">Sim</option>
+                    <option selected value="0">Não</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div> <!-- fim row -->
+          <div class="row">
+            <div class="col">
+              <editor [(ngModel)]="dados.template" name="template" [init]="plugins"></editor>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                  <button type="button" type="submit" class="btn btn-primary rounded-0 mr-1">Cadastrar</button>
+                  <button type="button" type="reset" class="btn btn-secondary rounded-0">Limpar</button>
+                </div>
+              </div>
+            </div>
+            <div class="col"></div>
+          </div> <!-- fim row -->
+        </form>
+      </div>
+    </div>
+  </div>

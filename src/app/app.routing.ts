@@ -1,3 +1,4 @@
+import { AgendaDeEventosComponent } from './views/agenda-de-eventos/agenda-de-eventos.component';
 import { ListarBotoesComponent } from './views/listar-botoes/listar-botoes.component';
 import { BotoesComponent } from './views/botoes/botoes.component';
 import { EditarNoticiasComponent } from './views/editar-noticias/editar-noticias.component';
@@ -47,6 +48,10 @@ export const routes: Routes = [
       {
         path: 'botoes',
         component: BotoesComponent
+      },
+      {
+        path: 'agenda-de-eventos',
+        component: AgendaDeEventosComponent
       },
 
       // listas

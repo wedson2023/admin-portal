@@ -1,0 +1,78 @@
+<div class="animated fadeIn">
+  <div class="card card-default">
+    <div class="card-header">
+      <i class="icon-envelope-letter"></i>Cadastro notícias
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="cadastrar()">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input required [(ngModel)]="dados.nome" name="nome" type="text" class="form-control" id="nome" placeholder="Nome do evento">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="cartaz">Cartaz</label>
+              <input accept="image/jpeg" required #arquivo (change)="onChangeCartaz($event)" type="file" style="padding: 3px 0.75rem !important;" class="form-control" id="cartaz">
+            </div>
+          </div>
+        </div> <!-- fim row -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group" >
+              <label for="local">Local</label>
+              <input required [(ngModel)]="dados.local" name="local" type="text" class="form-control" id="local" placeholder="Local do evento">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="data">Data</label>
+              <input required [(ngModel)]="dados.data" name="data" type="date-local" class="form-control" id="data" placeholder="Data do evento">
+            </div>
+          </div>
+        </div> <!-- fim row -->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="site">Site</label>
+              <input required [(ngModel)]="dados.site" name="site" type="text" class="form-control" id="site" placeholder="Site do evento">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="destaque">Categoria</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="destaque">Opções</label>
+                </div>
+                <select required [(ngModel)]="dados.categoria" name="categoria" class="custom-select" id="categoria">
+                  <option selected value="">Selecione um item</option>
+                  <option value="1">Sim</option>
+                  <option value="0">Não</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div> <!-- fim row -->
+        <div class="row">
+          <div class="col">
+            <editor [(ngModel)]="dados.informacoes" name="template" [init]="plugins"></editor>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <button type="button" type="submit" class="btn btn-primary rounded-0 mr-1">Cadastrar</button>
+                <button type="button" type="reset" class="btn btn-secondary rounded-0">Limpar</button>
+              </div>
+            </div>
+          </div>
+          <div class="col"></div>
+        </div> <!-- fim row -->
+      </form>
+    </div>
+  </div>
+</div>

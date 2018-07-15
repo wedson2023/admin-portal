@@ -90,11 +90,6 @@ export const navItems = [
         name: 'Contato',
         url: '/listar-contato',
         icon: 'icon-phone'
-      },
-      {
-        name: 'Anuncie',
-        url: '/listar-anuncie',
-        icon: 'icon-equalizer'
       }
     ]
   }  

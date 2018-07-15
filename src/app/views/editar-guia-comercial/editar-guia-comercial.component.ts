@@ -12,7 +12,7 @@ import swal from 'sweetalert';
 export class EditarGuiaComercialComponent implements OnInit {
 
   empresa_id;
-
+  segmentos;
   payload = new FormData();
   dados:any = {
     nome : null,
@@ -20,6 +20,8 @@ export class EditarGuiaComercialComponent implements OnInit {
     endereco : null,
     telefones : null,
     horario : null,
+    cidade : null,
+    segmento_id : null,
     formas_pagamento : null,
     ativo : 1,
     template : null,
@@ -48,6 +50,16 @@ export class EditarGuiaComercialComponent implements OnInit {
       swal('Error', err.error, 'error');
       this.progresso.done();
     })
+
+    this.progresso.start();
+    this.http.ApiGet('segmentos/listar').subscribe((response:any) => {
+      this.segmentos = response.resposta;
+      this.progresso.done();
+    }, err => {
+      swal('Error', err.error, 'error');
+      this.progresso.done();
+    })
+    
   }
   
   onChangeCapa(event){
@@ -68,6 +80,8 @@ export class EditarGuiaComercialComponent implements OnInit {
       endereco : null,
       telefones : null,
       horario : null,
+      cidade : null,
+      segmento_id : null,
       formas_pagamento : null,
       ativo : 1,
       template : null,
@@ -80,9 +94,9 @@ export class EditarGuiaComercialComponent implements OnInit {
   }
 
   cadastrar(){
-    if(!this.dados['nome'] || this.dados['ativo'] == null)
+    if(!this.dados['nome'] || !this.dados['segmento_id'] || this.dados['ativo'] == null)
     {
-      swal('Atenção', 'Os campos nome e ativo são requeridos', 'warning');
+      swal('Atenção', 'Os campos nome, segmentos e ativo são requeridos', 'warning');
       return false;   
     }
 
@@ -93,6 +107,8 @@ export class EditarGuiaComercialComponent implements OnInit {
     this.payload.append('endereco', this.dados['endereco']);
     this.payload.append('telefones', this.dados['telefones']);
     this.payload.append('horario', this.dados['horario']);
+    this.payload.append('segmento_id', this.dados['segmento_id']);
+    this.payload.append('cidade', this.dados['cidade']);
     this.payload.append('formas_pagamento', this.dados['formas_pagamento']);
     this.payload.append('template', this.dados['template']);
     this.payload.append('ativo', this.dados['ativo']);

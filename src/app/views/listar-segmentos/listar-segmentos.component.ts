@@ -3,28 +3,28 @@ import { HttpService } from '../../http.service';
 import { NgProgressService } from 'ng2-progressbar';
 
 @Component({
-  selector: 'app-listar-categorias',
-  templateUrl: './listar-categorias.component.html',
-  styleUrls: ['./listar-categorias.component.scss']
+  selector: 'app-listar-segmentos',
+  templateUrl: './listar-segmentos.component.html',
+  styleUrls: ['./listar-segmentos.component.scss']
 })
-export class ListarCategoriasComponent implements OnInit {
+export class ListarSegmentosComponent implements OnInit {
 
-  private categorias;
+  private segmentos;
   constructor(private http: HttpService, private progresso: NgProgressService) { }
 
   deletar(data){
     swal({
       title: "Atenção",
-      text: "Tem certeza que deseja deletar esse registro, essa ação removerá os segmentos dessa categoria?",
+      text: "Tem certeza que deseja deletar esse registro",
       icon: "warning",
       dangerMode: true
     })
     .then((willDelete) => {
       if (willDelete) {
         this.progresso.start();
-        this.http.ApiPost('categorias/deletar', { id : data.id }).subscribe((response) => {
+        this.http.ApiPost('segmentos/deletar', { id : data.id }).subscribe((response) => {
           swal('Sucesso', 'Registro deletado com sucesso.', 'success');
-          this.categorias.data.splice(this.categorias.data.indexOf(data), 1);
+          this.segmentos.data.splice(this.segmentos.data.indexOf(data), 1);
           this.progresso.done();
         }, err => {
           swal('Error', err.error, 'error');
@@ -36,9 +36,9 @@ export class ListarCategoriasComponent implements OnInit {
 
   ngOnInit() {
     this.progresso.start();
-    this.http.ApiGet('categorias/listar-todos').subscribe((response:any) => {
+    this.http.ApiGet('segmentos/listar-todos').subscribe((response:any) => {
       this.progresso.done();
-      this.categorias = response.registros;
+      this.segmentos = response.registros;
     }, err => {
       swal('Erro', err.error.resposta, 'error');
       this.progresso.done();
@@ -47,9 +47,9 @@ export class ListarCategoriasComponent implements OnInit {
 
   next(){
     this.progresso.start();
-    this.http.ApiGetNavigate(this.categorias.next_page_url).subscribe((response:any) => {
+    this.http.ApiGetNavigate(this.segmentos.next_page_url).subscribe((response:any) => {
       this.progresso.done();
-      this.categorias = response.registros;
+      this.segmentos = response.registros;
     }, err => {
       this.progresso.done();
       return false;
@@ -58,9 +58,9 @@ export class ListarCategoriasComponent implements OnInit {
 
   prev(){
     this.progresso.start();
-    this.http.ApiGetNavigate(this.categorias.prev_page_url).subscribe((response:any) => {
+    this.http.ApiGetNavigate(this.segmentos.prev_page_url).subscribe((response:any) => {
       this.progresso.done();
-      this.categorias = response.registros;
+      this.segmentos = response.registros;
     }, err => {
       this.progresso.done();
       return false;

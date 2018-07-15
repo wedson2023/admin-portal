@@ -29,7 +29,7 @@ export class CategoriasComponent {
       this.dados['nome'] = null;
       this.progresso.done();
     }, err => {
-      swal('Error', err.error, 'error');
+      swal('Error', err.error.resposta, 'error');
       this.progresso.done();
     })
   }

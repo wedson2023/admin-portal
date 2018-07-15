@@ -1,0 +1,43 @@
+<div class="animated fadeIn">
+  <div class="card card-default">
+    <div class="card-header">
+      <i class="icon-tag"></i>Cadastro segmentos
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="cadastrar()">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input required [(ngModel)]="dados.nome" name="nome" type="text" class="form-control" id="nome" placeholder="Nome do segmentos">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="destaque">Categoria</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="destaque">Opções</label>
+                </div>
+                <select required [(ngModel)]="dados.categoria_id" name="categoria_id" class="custom-select" id="categoria_id">                  
+                  <option *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.nome }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div> <!-- fim row -->
+        <div class="row mt-3">
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <button type="button" type="submit" class="btn btn-primary rounded-0 mr-1">Cadastrar</button>
+              </div>
+            </div>
+          </div>
+          <div class="col"></div>
+        </div> <!-- fim row -->
+      </form>
+    </div>
+  </div>
+</div>
+

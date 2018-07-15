@@ -36,6 +36,27 @@
           <div class="row">
             <div class="col">
               <div class="form-group">
+                  <label for="destaque">Segmentos</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="destaque">Opções</label>
+                    </div>
+                    <select required [(ngModel)]="dados.segmento_id" name="segmento_id" class="custom-select" id="segmento_id">                  
+                      <option *ngFor="let segmento of segmentos" [value]="segmento.id">{{ segmento.nome }}</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input required [(ngModel)]="dados.cidade" name="cidade" type="text" class="form-control" id="cidade" placeholder="Cidade da empresa">
+              </div>
+            </div>
+          </div> <!-- fim row -->
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
                 <label for="ativo">Ativo</label>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">

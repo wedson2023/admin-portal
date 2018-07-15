@@ -1,3 +1,5 @@
+import { ListarSegmentosComponent } from './views/listar-segmentos/listar-segmentos.component';
+import { SegmentosComponent } from './views/segmentos/segmentos.component';
 import { CategoriasComponent } from './views/categorias/categorias.component';
 import { EditarEventosComponent } from './views/editar-eventos/editar-eventos.component';
 import { ListarEventosComponent } from './views/listar-eventos/listar-eventos.component';
@@ -61,6 +63,10 @@ export const routes: Routes = [
         path: 'categorias',
         component: CategoriasComponent
       },
+      {
+        path: 'segmentos',
+        component: SegmentosComponent
+      },
 
       // listas
 
@@ -83,6 +89,10 @@ export const routes: Routes = [
       {
         path: 'listar-categorias',
         component: ListarCategoriasComponent
+      },
+      {
+        path: 'listar-segmentos',
+        component: ListarSegmentosComponent
       },
 
       // editar

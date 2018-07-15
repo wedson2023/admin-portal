@@ -70,11 +70,6 @@ export const navItems = [
         name: 'Agenda de eventos',
         url: '/listar-eventos',
         icon: 'icon-directions'
-      },
-      {
-        name: 'Banner',
-        url: '/listar-banner',
-        icon: 'icon-doc'
       },  
       {
         name: 'Categorias',
@@ -87,14 +82,14 @@ export const navItems = [
         icon: 'icon-tag'
       },
       {
+        name: 'Banner',
+        url: '/listar-banner',
+        icon: 'icon-doc'
+      },
+      {
         name: 'Contato',
         url: '/listar-contato',
         icon: 'icon-phone'
-      },
-      {
-        name: 'Eventos',
-        url: '/listar-eventos',
-        icon: 'icon-equalizer'
       },
       {
         name: 'Anuncie',

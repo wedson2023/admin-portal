@@ -53,6 +53,8 @@ import { ListarBotoesComponent } from './views/listar-botoes/listar-botoes.compo
 import { AgendaDeEventosComponent } from './views/agenda-de-eventos/agenda-de-eventos.component';
 import { ListarEventosComponent } from './views/listar-eventos/listar-eventos.component';
 import { EditarEventosComponent } from './views/editar-eventos/editar-eventos.component';
+import { CategoriasComponent } from './views/categorias/categorias.component';
+import { ListarCategoriasComponent } from './views/listar-categorias/listar-categorias.component';
 
 @NgModule({
   imports: [
@@ -87,7 +89,9 @@ import { EditarEventosComponent } from './views/editar-eventos/editar-eventos.co
     ListarBotoesComponent,
     AgendaDeEventosComponent,
     ListarEventosComponent,
-    EditarEventosComponent
+    EditarEventosComponent,
+    CategoriasComponent,
+    ListarCategoriasComponent
   ],
   providers: [
     AuthService,

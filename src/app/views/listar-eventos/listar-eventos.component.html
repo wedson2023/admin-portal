@@ -4,8 +4,8 @@
         <i class="icon-equalizer"></i>Lista eventos
     </div>
     <div class="card-body">
-      <p [hidden]="eventos?.data" class="text-muted text-center">Não há eventos cadastradas</p>
-      <table class="table table-hover table-sm">
+      <p [hidden]="eventos?.total" class="text-muted text-center">Não há eventos cadastradas</p>
+      <table [hidden]="!eventos?.total" class="table table-hover table-sm">
         <thead>
           <tr>
             <th style="width: 30%" scope="col">Evento</th>
@@ -26,7 +26,7 @@
           </tr>
         </tbody>
       </table>
-      <nav aria-label="Page navigation example">
+      <nav [hidden]="!eventos?.total" aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item">
             <a class="page-link" (click)="prev()" aria-label="Previous">

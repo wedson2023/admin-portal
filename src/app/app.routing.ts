@@ -1,3 +1,4 @@
+import { CategoriasComponent } from './views/categorias/categorias.component';
 import { EditarEventosComponent } from './views/editar-eventos/editar-eventos.component';
 import { ListarEventosComponent } from './views/listar-eventos/listar-eventos.component';
 import { AgendaDeEventosComponent } from './views/agenda-de-eventos/agenda-de-eventos.component';
@@ -17,6 +18,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DefaultLayoutComponent } from './containers';
 import { LoginComponent } from './views/login/login.component';
+import { ListarCategoriasComponent } from './views/listar-categorias/listar-categorias.component';
 
 export const routes: Routes = [  
   {
@@ -55,6 +57,10 @@ export const routes: Routes = [
         path: 'agenda-de-eventos',
         component: AgendaDeEventosComponent
       },
+      {
+        path: 'categorias',
+        component: CategoriasComponent
+      },
 
       // listas
 
@@ -73,6 +79,10 @@ export const routes: Routes = [
       {
         path: 'listar-eventos',
         component: ListarEventosComponent
+      },
+      {
+        path: 'listar-categorias',
+        component: ListarCategoriasComponent
       },
 
       // editar

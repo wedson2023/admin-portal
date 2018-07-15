@@ -1,0 +1,43 @@
+<div class="animated fadeIn">
+  <div class="card card-default">
+    <div class="card-header">
+      <i class="icon-folder"></i>Lista categorias
+    </div>
+    <div class="card-body">
+      <p [hidden]="categorias?.total" class="text-muted text-center">Não há categorias cadastradas</p>
+      <table [hidden]="!categorias?.total" class="table table-hover table-sm">
+        <thead>
+          <tr>
+            <th style="width: 90%" scope="col">Nome da categoria</th>
+            <th style="width: 10%" scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let categoria of categorias?.data">
+            <td style="width: 90%"><span class="text-nowrap" style="width: 15rem; display: block;">{{ categoria?.nome }}</span></td>                  
+            <td style="width: 10%">
+              <button (click)="deletar(categoria)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <nav [hidden]="!categorias?.total" aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" (click)="prev()" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" (click)="next()" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>     
+

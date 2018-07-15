@@ -4,8 +4,8 @@
           <i class="icon-envelope-letter"></i>Lista notícias
       </div>
       <div class="card-body">
-        <p [hidden]="noticias?.data" class="text-muted text-center">Não há noticias cadastradas</p>
-        <table class="table table-hover table-sm">
+        <p [hidden]="noticias?.total" class="text-muted text-center">Não há noticias cadastradas</p>
+        <table [hidden]="!noticias?.total" class="table table-hover table-sm">
           <thead>
             <tr>
               <th style="width: 30%" scope="col">Titulo</th>
@@ -26,7 +26,7 @@
             </tr>
           </tbody>
         </table>
-        <nav aria-label="Page navigation example">
+        <nav [hidden]="!noticias?.total" aria-label="Page navigation example">
           <ul class="pagination">
             <li class="page-item">
               <a class="page-link" (click)="prev()" aria-label="Previous">

@@ -4,8 +4,8 @@
         <i class="icon-map"></i>Lista empresas
     </div>
     <div class="card-body">
-      <p [hidden]="empresas?.data" class="text-muted text-center">Não há empresas cadastradas</p>
-      <table class="table table-hover table-sm">
+      <p [hidden]="empresas?.total" class="text-muted text-center">Não há empresas cadastradas</p>
+      <table [hidden]="!empresas?.total" class="table table-hover table-sm">
         <thead>
           <tr>
             <th style="width: 30%" scope="col">Empresa</th>
@@ -26,7 +26,7 @@
           </tr>
         </tbody>
       </table>
-      <nav aria-label="Page navigation example">
+      <nav [hidden]="!empresas?.total" aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item">
             <a class="page-link" (click)="prev()" aria-label="Previous">

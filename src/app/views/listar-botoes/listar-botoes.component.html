@@ -4,8 +4,8 @@
       <i class="icon-layers"></i>Lista botões
     </div>
     <div class="card-body">
-      <p [hidden]="botoes?.data" class="text-muted text-center">Não há botões cadastradas</p>
-      <table class="table table-hover table-sm">
+      <p [hidden]="botoes?.total" class="text-muted text-center">Não há botões cadastradas</p>
+      <table [hidden]="!botoes?.total" class="table table-hover table-sm">
         <thead>
           <tr>
             <th style="width: 90%" scope="col">Nome botões</th>

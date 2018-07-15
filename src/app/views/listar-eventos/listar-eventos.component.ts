@@ -73,6 +73,3 @@ export class ListarEventosComponent implements OnInit {
   }
 
 }
-
-
-}

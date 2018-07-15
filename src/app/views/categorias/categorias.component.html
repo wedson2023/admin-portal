@@ -1,0 +1,32 @@
+<div class="animated fadeIn">
+  <div class="card card-default">
+    <div class="card-header">
+      <i class="icon-folder"></i>Cadastro categorias
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="cadastrar()">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input required [(ngModel)]="dados.nome" name="nome" type="text" class="form-control" id="nome" placeholder="Nome da categoria">
+            </div>
+          </div>
+          <div class="col">
+          </div>
+        </div> <!-- fim row -->
+        <div class="row mt-3">
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <button type="button" type="submit" class="btn btn-primary rounded-0 mr-1">Cadastrar</button>
+              </div>
+            </div>
+          </div>
+          <div class="col"></div>
+        </div> <!-- fim row -->
+      </form>
+    </div>
+  </div>
+</div>
+

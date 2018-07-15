@@ -1,14 +1,16 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpService } from '../../http.service';
 import { NgProgressService } from 'ng2-progressbar';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-agenda-de-eventos',
-  templateUrl: './agenda-de-eventos.component.html',
-  styleUrls: ['./agenda-de-eventos.component.scss']
+  selector: 'app-editar-agenda-de-eventos',
+  templateUrl: './editar-eventos.component.html',
+  styleUrls: ['./editar-eventos.component.scss']
 })
-export class AgendaDeEventosComponent implements OnInit{
+export class EditarEventosComponent implements OnInit {
 
+  evento_id;
   payload = new FormData();
   categorias;
   dados:object = {
@@ -28,17 +30,33 @@ export class AgendaDeEventosComponent implements OnInit{
   };
 
   @ViewChild('arquivo') arquivo: ElementRef;
+  @ViewChild('data') data: ElementRef;
 
-  constructor(private http: HttpService, private progresso: NgProgressService) {}
+  constructor(
+    private http: HttpService,
+    private progresso: NgProgressService,
+    private router: Router,
+    private param: ActivatedRoute
+  ) { 
+    this.evento_id = this.param.snapshot.params['id'];    
+  }
 
   ngOnInit(){
     this.progresso.start();
-    this.http.ApiGet('categorias/listar').subscribe((response:any) => {
-      this.categorias = response.resposta;
+
+    this.http.ApiGet('eventos/listar/' + this.evento_id).subscribe((response:any) => {      
+      this.dados = response.resposta;
+      this.dados['data'] = new Date(response.resposta.data).toISOString().substr(0, 19);
       this.progresso.done();
     }, err => {
       swal('Error', err.error, 'error');
       this.progresso.done();
+    })
+
+    this.http.ApiGet('categorias/listar').subscribe((response:any) => {
+      this.categorias = response.resposta;
+    }, err => {
+      swal('Error', err.error, 'error');
     })
   }
   
@@ -70,6 +88,7 @@ export class AgendaDeEventosComponent implements OnInit{
 
     this.progresso.start();
   
+    this.payload.append('id', this.evento_id);
     this.payload.append('nome', this.dados['nome']);
     this.payload.append('local', this.dados['local']);
     this.payload.append('data', this.dados['data']);
@@ -77,9 +96,8 @@ export class AgendaDeEventosComponent implements OnInit{
     this.payload.append('site', this.dados['site']);
     this.payload.append('categoria_id', this.dados['categoria_id']);
 
-    this.http.ApiWithUpload('eventos/cadastro', this.payload).subscribe((response:any) => {
+    this.http.ApiWithUpload('eventos/editar', this.payload).subscribe((response:any) => {
       swal('Sucesso', 'Cadastro realizado com sucesso.', 'success');
-      this.limpar();
       this.progresso.done();
     }, err => {
       swal('Error', err.error, 'error');

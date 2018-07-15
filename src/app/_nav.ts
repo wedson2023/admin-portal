@@ -43,17 +43,7 @@ export const navItems = [
         name: 'Banner',
         url: '/banner',
         icon: 'icon-doc'
-      },
-      {
-        name: 'Contato',
-        url: '/contato',
-        icon: 'icon-phone'
-      },
-      {
-        name: 'Agenda de show',
-        url: '/agenda-de-show',
-        icon: 'icon-equalizer'
-      },
+      }
     ]
   },  
   {
@@ -78,7 +68,7 @@ export const navItems = [
       },
       {
         name: 'Agenda de eventos',
-        url: '/listar-agenda-de-eventos',
+        url: '/listar-eventos',
         icon: 'icon-directions'
       },
       {
@@ -102,8 +92,13 @@ export const navItems = [
         icon: 'icon-phone'
       },
       {
-        name: 'Agenda de show',
-        url: '/listar-agenda-de-show',
+        name: 'Eventos',
+        url: '/listar-eventos',
+        icon: 'icon-equalizer'
+      },
+      {
+        name: 'Anuncie',
+        url: '/listar-anuncie',
         icon: 'icon-equalizer'
       }
     ]

@@ -48,7 +48,8 @@
                   <label class="input-group-text" for="destaque">Opções</label>
                 </div>
                 <select required [(ngModel)]="dados.categoria_id" name="categoria_id" class="custom-select" id="categoria_id">                  
-                  <option [selected]="categoria.id == 0" *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.nome }}</option>
+                  <option [value]="">Selecione um item</option>
+                  <option *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.nome }}</option>
                 </select>
               </div>
             </div>

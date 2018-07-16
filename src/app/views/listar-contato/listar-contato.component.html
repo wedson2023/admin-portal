@@ -1,0 +1,76 @@
+<div bsModal #largeModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Informações contato</h4>
+        <button type="button" class="close" (click)="largeModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row mb-2">
+          <div class="col"><strong>Nome:</strong> {{ contato?.nome }}</div>
+          <div class="col"><strong>Email: </strong> <a [href]="'mailto:' + contato?.email">{{ contato?.email }}</a></div>
+        </div>
+        <div class="row mb-2">
+          <div class="col"><strong>Telefone:</strong> {{ contato?.telefone }}</div>
+          <div class="col"><strong>Estado:</strong>  {{ contato?.estado }}</div>
+        </div>
+        <div class="row mb-2">
+          <div class="col"><strong>Cidade:</strong> {{ contato?.cidade }}</div>
+          <div class="col"></div>
+        </div>
+        <div class="row">
+          <div class="col"><strong>Mensagem:</strong> {{ contato?.mensagem }}</div>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="animated fadeIn">
+  <div class="card card-default">
+    <div class="card-header">
+        <i class="icon-phone"></i>Lista contatos
+    </div>
+    <div class="card-body">
+      <p [hidden]="contatos?.total" class="text-muted text-center">Não há contatos cadastradas</p>
+      <table [hidden]="!contatos?.total" class="table table-hover table-sm">
+        <thead>
+          <tr>
+            <th style="width: 30%" scope="col">Nome</th>
+            <th style="width: 30%" scope="col">Email</th>
+            <th style="width: 30%" scope="col">Telefone</th>
+            <th style="width: 10%" scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="contatos" (click)="largeModalShow(contato)" *ngFor="let contato of contatos?.data">
+            <td style="width: 30%"><span class="text-nowrap" style="width: 15rem; display: block;">{{ contato?.nome }}</span></td>
+            <td style="width: 30%"><span class="text-nowrap" style="width: 15rem; display: block;">{{ contato?.email }}</span></td>
+            <td style="width: 30%"><span class="text-nowrap" style="width: 15rem; display: block;">{{ contato?.telefone }}</span></td>
+            <td style="width: 10%">
+              <button (click)="deletar(contato)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <nav [hidden]="!contatos?.total" aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" (click)="prev()" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" (click)="next()" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

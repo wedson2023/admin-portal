@@ -1,3 +1,4 @@
+import { ListarContatoComponent } from './views/listar-contato/listar-contato.component';
 import { ListarBannerComponent } from './views/listar-banner/listar-banner.component';
 import { BannerComponent } from './views/banner/banner.component';
 import { ListarSegmentosComponent } from './views/listar-segmentos/listar-segmentos.component';
@@ -103,6 +104,10 @@ export const routes: Routes = [
       {
         path: 'listar-banner',
         component: ListarBannerComponent
+      },
+      {
+        path: 'listar-contato',
+        component: ListarContatoComponent
       },
 
       // editar

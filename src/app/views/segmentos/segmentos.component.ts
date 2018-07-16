@@ -12,7 +12,7 @@ export class SegmentosComponent implements OnInit {
   categorias;
   dados:object = {
     nome : null,
-    categoria_id : null
+    categoria_id : ''
   };
 
   constructor(private http: HttpService, private progresso: NgProgressService) {}

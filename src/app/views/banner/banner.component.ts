@@ -13,7 +13,7 @@ export class BannerComponent {
   payload = new FormData();
   dados:object = {
     imagem : null,
-    tamanho : null
+    tamanho : ''
   };
 
   constructor(private http: HttpService, private progresso: NgProgressService) {}

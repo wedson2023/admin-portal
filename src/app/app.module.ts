@@ -6,6 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgProgressModule } from 'ng2-progressbar';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
@@ -59,6 +61,7 @@ import { SegmentosComponent } from './views/segmentos/segmentos.component';
 import { ListarSegmentosComponent } from './views/listar-segmentos/listar-segmentos.component';
 import { BannerComponent } from './views/banner/banner.component';
 import { ListarBannerComponent } from './views/listar-banner/listar-banner.component';
+import { ListarContatoComponent } from './views/listar-contato/listar-contato.component';
 
 @NgModule({
   imports: [
@@ -76,7 +79,9 @@ import { ListarBannerComponent } from './views/listar-banner/listar-banner.compo
     ChartsModule,
     FormsModule,
     HttpClientModule,
-    EditorModule
+    EditorModule,
+    AlertModule.forRoot(),
+    ModalModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -99,7 +104,8 @@ import { ListarBannerComponent } from './views/listar-banner/listar-banner.compo
     SegmentosComponent,
     ListarSegmentosComponent,
     BannerComponent,
-    ListarBannerComponent
+    ListarBannerComponent,
+    ListarContatoComponent
   ],
   providers: [
     AuthService,

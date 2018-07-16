@@ -41,7 +41,8 @@
                       <div class="input-group-prepend">
                         <label class="input-group-text" for="destaque">Opções</label>
                       </div>
-                      <select required [(ngModel)]="dados.segmento_id" name="segmento_id" class="custom-select" id="segmento_id">                  
+                      <select required [(ngModel)]="dados.segmento_id" name="segmento_id" class="custom-select" id="segmento_id"> 
+                        <option value="">Selecione um item</option>                 
                         <option *ngFor="let segmento of segmentos" [value]="segmento.id">{{ segmento.nome }}</option>
                       </select>
                     </div>

@@ -1,3 +1,5 @@
+import { ListarBannerComponent } from './views/listar-banner/listar-banner.component';
+import { BannerComponent } from './views/banner/banner.component';
 import { ListarSegmentosComponent } from './views/listar-segmentos/listar-segmentos.component';
 import { SegmentosComponent } from './views/segmentos/segmentos.component';
 import { CategoriasComponent } from './views/categorias/categorias.component';
@@ -67,6 +69,10 @@ export const routes: Routes = [
         path: 'segmentos',
         component: SegmentosComponent
       },
+      {
+        path: 'banner',
+        component: BannerComponent
+      },
 
       // listas
 
@@ -93,6 +99,10 @@ export const routes: Routes = [
       {
         path: 'listar-segmentos',
         component: ListarSegmentosComponent
+      },
+      {
+        path: 'listar-banner',
+        component: ListarBannerComponent
       },
 
       // editar

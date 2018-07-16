@@ -1,0 +1,45 @@
+<div class="animated fadeIn">
+  <div class="card card-default">
+    <div class="card-header">
+      <i class="icon-doc"></i>Lista banners
+    </div>
+    <div class="card-body">
+      <p [hidden]="banners?.total" class="text-muted text-center">Não há banners cadastrados</p>
+      <table [hidden]="!banners?.total" class="table table-hover table-sm">
+        <thead>
+          <tr>
+            <th style="width: 45%" scope="col">Imagem</th>
+            <th style="width: 45%" scope="col">Tamanho</th>
+            <th style="width: 10%" scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let banner of banners?.data">
+            <td style="width: 45%"><span class="text-nowrap" style="width: 15rem; display: block;"><img width="100px" height="50px" [src]="url  + '/' + banner?.imagem" alt=""></span></td>                  
+            <td style="width: 45%"><span class="text-nowrap" style="width: 15rem; display: block;">{{ banner?.tamanho }}</span></td>                  
+            <td style="width: 10%">
+              <button (click)="deletar(banner)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <nav [hidden]="!banners?.total" aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" (click)="prev()" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" (click)="next()" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>     
+

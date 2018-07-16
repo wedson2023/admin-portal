@@ -57,6 +57,8 @@ import { CategoriasComponent } from './views/categorias/categorias.component';
 import { ListarCategoriasComponent } from './views/listar-categorias/listar-categorias.component';
 import { SegmentosComponent } from './views/segmentos/segmentos.component';
 import { ListarSegmentosComponent } from './views/listar-segmentos/listar-segmentos.component';
+import { BannerComponent } from './views/banner/banner.component';
+import { ListarBannerComponent } from './views/listar-banner/listar-banner.component';
 
 @NgModule({
   imports: [
@@ -95,7 +97,9 @@ import { ListarSegmentosComponent } from './views/listar-segmentos/listar-segmen
     CategoriasComponent,
     ListarCategoriasComponent,
     SegmentosComponent,
-    ListarSegmentosComponent
+    ListarSegmentosComponent,
+    BannerComponent,
+    ListarBannerComponent
   ],
   providers: [
     AuthService,

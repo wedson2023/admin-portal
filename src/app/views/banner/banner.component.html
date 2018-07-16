@@ -1,0 +1,47 @@
+<div class="animated fadeIn">
+  <div class="card card-default">
+    <div class="card-header">
+      <i class="icon-doc"></i>Cadastro banner
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="cadastrar()">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="imagem">Banner</label>
+              <input accept="image/jpeg" required #arquivo (change)="onChangeImagem($event)" type="file" style="padding: 3px 0.75rem !important;" class="form-control" id="imagem">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="tamanho">Tamanho</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="tamanho">Opções</label>
+                </div>
+                <select required [(ngModel)]="dados.tamanho" name="tamanho" class="custom-select" id="tamanho">
+                  <option value="230x270">230x270</option>
+                  <option value="300x100">300x100</option>
+                  <option value="300x250">300x250</option>
+                  <option value="300x100">300x100</option>
+                  <option value="600x100">600x100</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div> <!-- fim row -->
+        <div class="row mt-3">
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <button type="button" type="submit" class="btn btn-primary rounded-0 mr-1">Cadastrar</button>
+              </div>
+            </div>
+          </div>
+          <div class="col"></div>
+        </div> <!-- fim row -->
+      </form>
+    </div>
+  </div>
+</div>
+

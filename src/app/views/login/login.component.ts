@@ -13,7 +13,7 @@ import { timeout } from 'q';
 
 export class LoginComponent { 
 
-  usuario:object = { nome : null, password : null };
+  usuario = { nome : null, password : null };
 
   constructor(
     private router: Router,

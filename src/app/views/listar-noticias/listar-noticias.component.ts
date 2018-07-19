@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListarNoticiasComponent implements OnInit {
 
-  private noticias;
+  public noticias;
   constructor(private http: HttpService, private progresso: NgProgressService, private router: Router) { }
 
   editar(data){

@@ -9,8 +9,8 @@ import { NgProgressService } from 'ng2-progressbar';
 })
 export class ListarBannerComponent implements OnInit {
 
-  private banners;
-  private url = 'http://portaldoguia.com.br/uploads/banner/';
+  public banners;
+  public url = 'http://portaldoguia.com.br/uploads/banner/';
   constructor(private http: HttpService, private progresso: NgProgressService) { }
 
   deletar(data){

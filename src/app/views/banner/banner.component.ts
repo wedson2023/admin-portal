@@ -11,7 +11,7 @@ export class BannerComponent {
 
   @ViewChild('arquivo') arquivo: ElementRef;
   payload = new FormData();
-  dados:object = {
+  dados = {
     imagem : null,
     tamanho : ''
   };

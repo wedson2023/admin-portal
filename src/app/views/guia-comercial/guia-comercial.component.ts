@@ -12,7 +12,7 @@ export class GuiaComercialComponent {
 
   segmentos;
   payload = new FormData();
-  dados:object = {
+  dados = {
     nome : null,
     capa : null,
     endereco : null,
@@ -21,9 +21,13 @@ export class GuiaComercialComponent {
     cidade : null,
     segmento_id : '',
     formas_pagamento : null,
-    ativo : 1,
+    ativo : '1',
     template : null,
-    contato : {}
+    contato : {
+      site : null,
+      email : null,
+      facebook : null
+    }  
   };
 
   @ViewChild('arquivo') arquivo: ElementRef;
@@ -62,7 +66,7 @@ export class GuiaComercialComponent {
       cidade : null,
       segmento_id : '',
       formas_pagamento : null,
-      ativo : 1,
+      ativo : '1',
       template : null,
       contato : {
         site : null,

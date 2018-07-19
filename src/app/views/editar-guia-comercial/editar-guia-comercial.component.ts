@@ -14,7 +14,7 @@ export class EditarGuiaComercialComponent implements OnInit {
   empresa_id;
   segmentos;
   payload = new FormData();
-  dados:any = {
+  dados = {
     nome : null,
     capa : null,
     endereco : null,
@@ -23,9 +23,13 @@ export class EditarGuiaComercialComponent implements OnInit {
     cidade : null,
     segmento_id : null,
     formas_pagamento : null,
-    ativo : 1,
+    ativo : '1',
     template : null,
-    contato : {}
+    contato : {
+      site : null,
+      email : null,
+      facebook : null
+    } 
   };
 
   constructor(
@@ -83,7 +87,7 @@ export class EditarGuiaComercialComponent implements OnInit {
       cidade : null,
       segmento_id : null,
       formas_pagamento : null,
-      ativo : 1,
+      ativo : '1',
       template : null,
       contato : {
         site : null,

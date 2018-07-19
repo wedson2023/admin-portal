@@ -13,7 +13,7 @@ export class EditarEventosComponent implements OnInit {
   evento_id;
   payload = new FormData();
   categorias;
-  dados:object = {
+  dados = {
     nome : null,
     cartaz : null,
     local : null,

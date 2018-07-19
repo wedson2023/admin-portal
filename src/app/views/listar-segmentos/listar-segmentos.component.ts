@@ -9,7 +9,7 @@ import { NgProgressService } from 'ng2-progressbar';
 })
 export class ListarSegmentosComponent implements OnInit {
 
-  private segmentos;
+  public segmentos;
   constructor(private http: HttpService, private progresso: NgProgressService) { }
 
   deletar(data){

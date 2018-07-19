@@ -11,14 +11,14 @@ import {NgProgressService} from "ng2-progressbar";
 export class NoticiasComponent{
   
   payload = new FormData();
-  dados:object = {
+  dados = {
     fonte : null,
     capa : null,
     titulo : null,
     subtitulo : null,
     categoria : null,
-    ativo : 1,
-    destaque : 0,
+    ativo : '1',
+    destaque : '0',
     template : null
   };
 
@@ -44,8 +44,8 @@ export class NoticiasComponent{
       titulo : null,
       subtitulo : null,
       categoria : null,
-      ativo : 1,
-      destaque : 0,
+      ativo : '1',
+      destaque : '0',
       template : null
     };
 

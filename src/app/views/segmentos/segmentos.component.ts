@@ -10,7 +10,7 @@ import { NgProgressService } from 'ng2-progressbar';
 export class SegmentosComponent implements OnInit {
 
   categorias;
-  dados:object = {
+  dados = {
     nome : null,
     categoria_id : ''
   };

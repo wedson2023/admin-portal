@@ -9,7 +9,7 @@ import { NgProgressService } from 'ng2-progressbar';
 })
 export class ListarCategoriasComponent implements OnInit {
 
-  private categorias;
+  public categorias;
   constructor(private http: HttpService, private progresso: NgProgressService) { }
 
   deletar(data){

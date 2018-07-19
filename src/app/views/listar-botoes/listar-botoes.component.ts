@@ -9,7 +9,7 @@ import { HttpService } from '../../http.service';
 })
 export class ListarBotoesComponent implements OnInit {
 
-  private botoes;
+  public botoes;
   constructor(private http: HttpService, private progresso: NgProgressService) { }
 
   deletar(data){

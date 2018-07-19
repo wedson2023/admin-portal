@@ -9,7 +9,7 @@ import { NgProgressService } from 'ng2-progressbar';
 })
 export class CategoriasComponent {
 
-  dados:object = {
+  dados = {
     nome : null
   };
 

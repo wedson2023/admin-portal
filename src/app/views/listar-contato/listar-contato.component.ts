@@ -20,7 +20,7 @@ export class ListarContatoComponent implements OnInit {
   @ViewChild('largeModal') largeModal;
 
   public contato;
-  private contatos;
+  public contatos;
   constructor(private http: HttpService, private progresso: NgProgressService) { }
 
   public largeModalShow(contato): void {

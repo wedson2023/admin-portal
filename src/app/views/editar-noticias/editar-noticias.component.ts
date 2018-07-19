@@ -13,14 +13,14 @@ export class EditarNoticiasComponent implements OnInit {
   noticia_id;
 
   payload = new FormData();
-  dados:object = {
+  dados = {
     fonte : null,
     capa : null,
     titulo : null,
     subtitulo : null,
     categoria : null,
-    ativo : 1,
-    destaque : 0,
+    ativo : '1',
+    destaque : '0',
     template : null
   };
 
@@ -64,8 +64,8 @@ export class EditarNoticiasComponent implements OnInit {
       titulo : null,
       subtitulo : null,
       categoria : null,
-      ativo : 1,
-      destaque : 0,
+      ativo : '1',
+      destaque : '0',
       template : null
     };
   }

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListarGuiaComercialComponent implements OnInit {
 
-  private empresas;
+  public empresas;
   constructor(private http: HttpService, private progresso: NgProgressService, private router: Router) { }
 
   editar(data){

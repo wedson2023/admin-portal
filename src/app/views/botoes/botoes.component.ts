@@ -9,7 +9,7 @@ import { NgProgressService } from 'ng2-progressbar';
 })
 export class BotoesComponent {
   payload = new FormData();
-  dados:object = {
+  dados = {
     nome : null,
     arquivo : null
   };

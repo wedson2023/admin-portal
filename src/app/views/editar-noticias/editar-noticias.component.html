@@ -67,6 +67,15 @@
           </div> <!-- fim row -->
           <div class="row">
             <div class="col">
+              <div class="form-group" >
+                <label for="categoria">Categoria</label>
+                <input required [(ngModel)]="dados.categoria" name="categoria" type="text" class="form-control" id="categoria" placeholder="Categoria da notícia">
+              </div>
+            </div>
+            <div class="col"></div>
+          </div> <!-- fim row -->
+          <div class="row">
+            <div class="col">
               <editor [(ngModel)]="dados.template" name="template" [init]="plugins"></editor>
             </div>
           </div>

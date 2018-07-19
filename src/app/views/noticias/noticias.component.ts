@@ -16,6 +16,7 @@ export class NoticiasComponent{
     capa : null,
     titulo : null,
     subtitulo : null,
+    categoria : null,
     ativo : 1,
     destaque : 0,
     template : null
@@ -42,6 +43,7 @@ export class NoticiasComponent{
       capa : null,
       titulo : null,
       subtitulo : null,
+      categoria : null,
       ativo : 1,
       destaque : 0,
       template : null
@@ -63,6 +65,7 @@ export class NoticiasComponent{
     this.payload.append('titulo', this.dados['titulo']);
     this.payload.append('subtitulo', this.dados['subtitulo']);
     this.payload.append('ativo', this.dados['ativo']);
+    this.payload.append('categoria', this.dados['categoria']);
     this.payload.append('destaque', this.dados['destaque']);
     this.payload.append('template', this.dados['template']);
 

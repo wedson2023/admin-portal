@@ -36,7 +36,7 @@ export class BannerComponent {
 
     this.http.ApiWithUpload('banner/cadastro', this.payload).subscribe((response:any) => {
       swal('Sucesso', 'Cadastro realizado com sucesso.', 'success');
-      this.dados['tamanho'] = null;
+      this.dados['tamanho'] = '';
       this.arquivo.nativeElement.value = '';
       this.progresso.done();
     }, err => {;

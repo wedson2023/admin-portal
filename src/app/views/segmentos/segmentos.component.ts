@@ -40,6 +40,7 @@ export class SegmentosComponent implements OnInit {
     this.http.ApiPost('segmentos/cadastro', this.dados).subscribe((response:any) => {
       swal('Sucesso', 'Cadastro realizado com sucesso.', 'success');
       this.dados['nome'] = null;
+      this.dados['segmento_id'] = '';
       this.progresso.done();
     }, err => {;
       swal('Error', err.error.resposta, 'error');

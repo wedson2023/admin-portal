@@ -60,7 +60,7 @@ export class GuiaComercialComponent {
       telefones : null,
       horario : null,
       cidade : null,
-      segmento_id : null,
+      segmento_id : '',
       formas_pagamento : null,
       ativo : 1,
       template : null,

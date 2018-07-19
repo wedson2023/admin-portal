@@ -55,7 +55,7 @@ export class AgendaDeEventosComponent implements OnInit{
       data : null,
       template : null,
       site : null,
-      categoria_id : ''
+      categoria_id : 'Selecione um item'
     };
 
     this.arquivo.nativeElement.value = '';

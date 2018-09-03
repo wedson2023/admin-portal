@@ -41,8 +41,8 @@
                       <div class="input-group-prepend">
                         <label class="input-group-text" for="destaque">Opções</label>
                       </div>
-                      <select required [(ngModel)]="dados.segmento_id" name="segmento_id" class="custom-select" id="segmento_id"> 
-                        <option value="">Selecione um item</option>                 
+                      <select required [(ngModel)]="dados.segmento_id" name="segmento_id" class="custom-select" id="segmento_id">
+                        <option value="">Selecione um item</option>
                         <option *ngFor="let segmento of segmentos" [value]="segmento.id">{{ segmento.nome }}</option>
                       </select>
                     </div>
@@ -105,7 +105,25 @@
                 <input required [(ngModel)]="dados.contato.facebook" name="facebook" type="text" class="form-control" id="facebook" placeholder="Facebook empresa">
               </div>
             </div>
-          </div> <!-- fim row -->
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="destaque">Destaque</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="destaque">Opções</label>
+                  </div>
+                  <select required [(ngModel)]="dados.destaque" name="destaque" class="custom-select" id="destaque">
+                    <option value="">Selecione um item</option>
+                    <option value="1">Sim</option>
+                    <option selected value="0">Não</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col"></div>
+          </div><!-- fim row -->
           <div class="row">
             <div class="col">
               <editor [(ngModel)]="dados.template" name="template" [init]="plugins"></editor>

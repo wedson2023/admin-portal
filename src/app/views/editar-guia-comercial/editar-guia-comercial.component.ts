@@ -24,12 +24,13 @@ export class EditarGuiaComercialComponent implements OnInit {
     segmento_id : null,
     formas_pagamento : null,
     ativo : '1',
+    destaque : '0',
     template : null,
     contato : {
       site : null,
       email : null,
       facebook : null
-    } 
+    }
   };
 
   constructor(
@@ -37,18 +38,18 @@ export class EditarGuiaComercialComponent implements OnInit {
     private progresso: NgProgressService,
     private router: Router,
     private param: ActivatedRoute
-  ) { 
-    this.empresa_id = this.param.snapshot.params['id'];    
+  ) {
+    this.empresa_id = this.param.snapshot.params['id'];
   }
 
   ngOnInit() {
     this.progresso.start();
-    this.http.ApiGet('guia-comercial/listar/' + this.empresa_id).subscribe((response:any) => {      
+    this.http.ApiGet('guia-comercial/listar/' + this.empresa_id).subscribe((response:any) => {
       this.dados = response.resposta;
       this.dados.contato.site = response.resposta.contato.filter(e => e.nome == 'site')[0].url;
       this.dados.contato.email = response.resposta.contato.filter(e => e.nome == 'email')[0].url;
       this.dados.contato.facebook = response.resposta.contato.filter(e => e.nome == 'facebook')[0].url;
-     
+
       this.progresso.done();
     }, err => {
       swal('Error', err.error, 'error');
@@ -63,9 +64,9 @@ export class EditarGuiaComercialComponent implements OnInit {
       swal('Error', err.error, 'error');
       this.progresso.done();
     })
-    
+
   }
-  
+
   onChangeCapa(event){
     this.dados['capa'] = event.target.files[0];
     this.payload.append('capa', event.target.files[0]);
@@ -88,12 +89,13 @@ export class EditarGuiaComercialComponent implements OnInit {
       segmento_id : null,
       formas_pagamento : null,
       ativo : '1',
+      destaque : '0',
       template : null,
       contato : {
         site : null,
         email : null,
         facebook : null
-      }     
+      }
     };
   }
 
@@ -101,11 +103,11 @@ export class EditarGuiaComercialComponent implements OnInit {
     if(!this.dados['nome'] || !this.dados['segmento_id'] || this.dados['ativo'] == null)
     {
       swal('Atenção', 'Os campos nome, segmentos e ativo são requeridos', 'warning');
-      return false;   
+      return false;
     }
 
     this.progresso.start();
-  
+
     this.payload.append('id', this.empresa_id);
     this.payload.append('nome', this.dados['nome']);
     this.payload.append('endereco', this.dados['endereco']);
@@ -116,6 +118,7 @@ export class EditarGuiaComercialComponent implements OnInit {
     this.payload.append('formas_pagamento', this.dados['formas_pagamento']);
     this.payload.append('template', this.dados['template']);
     this.payload.append('ativo', this.dados['ativo']);
+    this.payload.append('destaque', this.dados['destaque']);
 
     this.payload.append('contato[site]', (this.dados['contato'].site || null));
     this.payload.append('contato[email]', (this.dados['contato'].email || null));

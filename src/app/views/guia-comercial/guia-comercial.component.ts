@@ -22,12 +22,13 @@ export class GuiaComercialComponent {
     segmento_id : '',
     formas_pagamento : null,
     ativo : '1',
+    destaque : '0',
     template : null,
     contato : {
       site : null,
       email : null,
       facebook : null
-    }  
+    }
   };
 
   @ViewChild('arquivo') arquivo: ElementRef;
@@ -43,8 +44,8 @@ export class GuiaComercialComponent {
       swal('Error', err.error, 'error');
       this.progresso.done();
     })
-  } 
-  
+  }
+
   onChangeCapa(event){
     this.dados['capa'] = event.target.files[0];
     this.payload.append('capa', event.target.files[0]);
@@ -67,12 +68,13 @@ export class GuiaComercialComponent {
       segmento_id : '',
       formas_pagamento : null,
       ativo : '1',
+      destaque : '0',
       template : null,
       contato : {
         site : null,
         email : null,
         facebook : null
-      }     
+      }
     };
 
     this.arquivo.nativeElement.value = '';
@@ -82,11 +84,11 @@ export class GuiaComercialComponent {
     if(!this.dados['nome'] || !this.dados['segmento_id'] || this.dados['ativo'] == null)
     {
       swal('Atenção', 'Os campos nome, segmentos e ativo são requeridos', 'warning');
-      return false;   
+      return false;
     }
 
     this.progresso.start();
-  
+
     this.payload.append('nome', this.dados['nome']);
     this.payload.append('endereco', this.dados['endereco']);
     this.payload.append('telefones', this.dados['telefones']);
@@ -96,6 +98,7 @@ export class GuiaComercialComponent {
     this.payload.append('formas_pagamento', this.dados['formas_pagamento']);
     this.payload.append('template', this.dados['template']);
     this.payload.append('ativo', this.dados['ativo']);
+    this.payload.append('destaque', this.dados['destaque']);
 
     this.payload.append('contato[site]', (this.dados['contato'].site || null));
     this.payload.append('contato[email]', (this.dados['contato'].email || null));

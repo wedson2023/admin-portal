@@ -46,9 +46,10 @@ export class EditarGuiaComercialComponent implements OnInit {
     this.progresso.start();
     this.http.ApiGet('guia-comercial/listar/' + this.empresa_id).subscribe((response:any) => {
       this.dados = response.resposta;
-      this.dados.contato.site = response.resposta.contato.filter(e => e.nome == 'site')[0].url;
-      this.dados.contato.email = response.resposta.contato.filter(e => e.nome == 'email')[0].url;
-      this.dados.contato.facebook = response.resposta.contato.filter(e => e.nome == 'facebook')[0].url;
+      let contatos = response.resposta.contato;
+      this.dados.contato.site = contatos.filter(e => e.nome == 'site').length ? contatos.filter(e => e.nome == 'site')[0].url : null;
+      this.dados.contato.email = contatos.filter(e => e.nome == 'email').length ? contatos.filter(e => e.nome == 'email')[0].url : null;
+      this.dados.contato.facebook = contatos.filter(e => e.nome == 'facebook').length ? contatos.filter(e => e.nome == 'facebook')[0].url : null;
 
       this.progresso.done();
     }, err => {

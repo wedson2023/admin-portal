@@ -11,7 +11,7 @@ import { timeout } from 'q';
 })
 
 
-export class LoginComponent { 
+export class LoginComponent {
 
   usuario = { nome : null, password : null };
 
@@ -29,12 +29,13 @@ export class LoginComponent {
     }
     else
     {
-      this.http.ApiPost('login', usuario).subscribe(response => {
+      this.http.ApiPost('login', usuario).subscribe((response:any) => {
         sessionStorage.setItem('usuario', JSON.stringify(response));
-        this.router.navigate(['dashboard']); 
+        this.http.setToken(response.token);
+        this.router.navigate(['dashboard']);
       }, err => {
         swal('Erro', err.error.resposta, 'error');
       })
-    } 
+    }
   }
 }

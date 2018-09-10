@@ -1,7 +1,16 @@
 
 span{
-    white-space: nowrap; 
-    width: 95px; 
+    white-space: nowrap;
+    width: 95px;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+tr{
+  cursor: default
+}
+
+.inativa{
+  color: #ffffff;
+  background: tomato
 }

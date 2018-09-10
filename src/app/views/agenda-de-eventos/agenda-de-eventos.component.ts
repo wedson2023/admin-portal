@@ -41,7 +41,7 @@ export class AgendaDeEventosComponent implements OnInit{
       this.progresso.done();
     })
   }
-  
+
   onChangeCartaz(event){
     this.dados['cartaz'] = event.target.files[0];
     this.payload.append('cartaz', event.target.files[0]);
@@ -65,11 +65,11 @@ export class AgendaDeEventosComponent implements OnInit{
     if(!this.dados['nome'] || !this.dados['local'] || this.dados['data'] == null || this.dados['categoria_id'] == null)
     {
       swal('Atenção', 'Os campos são requeridos', 'warning');
-      return false;   
+      return false;
     }
 
     this.progresso.start();
-  
+
     this.payload.append('nome', this.dados['nome']);
     this.payload.append('local', this.dados['local']);
     this.payload.append('data', this.dados['data']);

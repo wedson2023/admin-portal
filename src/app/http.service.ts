@@ -10,17 +10,26 @@ export class HttpService {
  // endPoint = 'http://portal.test';
 
   headers = {
-    headers: new HttpHeaders({     
+    headers: new HttpHeaders({
       'Content-Type' : 'application/json',
       'Authorization' : this.token
     })
   }
 
+  setToken(token){
+    this.headers = {
+      headers: new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization' : token
+      })
+    }
+  }
+
   constructor(private http: HttpClient) { }
 
-  ApiWithUpload(url, data){ 
+  ApiWithUpload(url, data){
     let headers = {
-    headers: new HttpHeaders({     
+    headers: new HttpHeaders({
       'Authorization' : this.token
     })
   }

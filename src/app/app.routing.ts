@@ -24,8 +24,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { DefaultLayoutComponent } from './containers';
 import { LoginComponent } from './views/login/login.component';
 import { ListarCategoriasComponent } from './views/listar-categorias/listar-categorias.component';
+import { VideosComponent } from './views/videos/videos.component';
 
-export const routes: Routes = [  
+export const routes: Routes = [
   {
     path: '',
     component: LoginComponent,
@@ -73,6 +74,10 @@ export const routes: Routes = [
       {
         path: 'banner',
         component: BannerComponent
+      },
+      {
+        path: 'videos',
+        component: VideosComponent
       },
 
       // listas

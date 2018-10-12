@@ -62,6 +62,7 @@ import { ListarSegmentosComponent } from './views/listar-segmentos/listar-segmen
 import { BannerComponent } from './views/banner/banner.component';
 import { ListarBannerComponent } from './views/listar-banner/listar-banner.component';
 import { ListarContatoComponent } from './views/listar-contato/listar-contato.component';
+import { VideosComponent } from './views/videos/videos.component';
 
 @NgModule({
   imports: [
@@ -105,7 +106,8 @@ import { ListarContatoComponent } from './views/listar-contato/listar-contato.co
     ListarSegmentosComponent,
     BannerComponent,
     ListarBannerComponent,
-    ListarContatoComponent
+    ListarContatoComponent,
+    VideosComponent
   ],
   providers: [
     AuthService,

@@ -1,0 +1,31 @@
+<div class="animated fadeIn">
+  <div class="card card-default">
+    <div class="card-header">
+      <i class="icon-envelope-letter"></i>Cadastro Vídeos
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="cadastrar()">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="video">Vídeo</label>
+              <input required [(ngModel)]="video" name="video" type="text" class="form-control" id="video" placeholder="Link vídeos">
+            </div>
+          </div>
+          <div class="col">
+          </div>
+        </div> <!-- fim row -->
+        <div class="row mt-3">
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <button type="button" type="submit" class="btn btn-primary rounded-0 mr-1">Cadastrar</button>
+              </div>
+            </div>
+          </div>
+          <div class="col"></div>
+        </div> <!-- fim row -->
+      </form>
+    </div>
+  </div>
+</div>

@@ -28,12 +28,12 @@ export const navItems = [
         name: 'Agenda de eventos',
         url: '/agenda-de-eventos',
         icon: 'icon-directions'
-      },  
+      },
       {
         name: 'Categorias',
         url: '/categorias',
         icon: 'icon-folder'
-      },  
+      },
       {
         name: 'Segmentos',
         url: '/segmentos',
@@ -43,9 +43,14 @@ export const navItems = [
         name: 'Banner',
         url: '/banner',
         icon: 'icon-doc'
+      },
+      {
+        name: 'Vídeos',
+        url: '/videos',
+        icon: 'icon-doc'
       }
     ]
-  },  
+  },
   {
     name: 'Listas',
     url: '/listas',
@@ -70,12 +75,12 @@ export const navItems = [
         name: 'Agenda de eventos',
         url: '/listar-eventos',
         icon: 'icon-directions'
-      },  
+      },
       {
         name: 'Categorias',
         url: '/listar-categorias',
         icon: 'icon-folder'
-      },  
+      },
       {
         name: 'Segmentos',
         url: '/listar-segmentos',
@@ -92,5 +97,5 @@ export const navItems = [
         icon: 'icon-phone'
       }
     ]
-  }  
+  }
 ];

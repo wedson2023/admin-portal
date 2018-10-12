@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpService } from '../../http.service';
 import { NgProgressService } from 'ng2-progressbar';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -32,6 +32,9 @@ export class EditarGuiaComercialComponent implements OnInit {
       facebook : null
     }
   };
+
+  @ViewChild('arquivo') arquivo: ElementRef;
+  @ViewChild('galeria') galeria: ElementRef;
 
   constructor(
     private http: HttpService,
@@ -73,6 +76,13 @@ export class EditarGuiaComercialComponent implements OnInit {
     this.payload.append('capa', event.target.files[0]);
   }
 
+  onChangegaleria(event){
+    for(let x in event.target.files)
+    {
+      this.payload.append('galeria[' + x + ']', event.target.files[x]);
+    }
+  }
+
   plugins:object = {
     language_url: 'http://portal.test/tinymce_langs/pt_BR.js',
     toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
@@ -98,6 +108,9 @@ export class EditarGuiaComercialComponent implements OnInit {
         facebook : null
       }
     };
+
+    this.arquivo.nativeElement.value = '';
+    this.galeria.nativeElement.value = '';
   }
 
   cadastrar(){

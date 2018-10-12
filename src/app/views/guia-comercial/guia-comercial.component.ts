@@ -32,6 +32,7 @@ export class GuiaComercialComponent {
   };
 
   @ViewChild('arquivo') arquivo: ElementRef;
+  @ViewChild('galeria') galeria: ElementRef;
 
   constructor(private http: HttpService, private progresso: NgProgressService) {}
 
@@ -49,6 +50,13 @@ export class GuiaComercialComponent {
   onChangeCapa(event){
     this.dados['capa'] = event.target.files[0];
     this.payload.append('capa', event.target.files[0]);
+  }
+
+  onChangegaleria(event){
+    for(let x in event.target.files)
+    {
+      this.payload.append('galeria[' + x + ']', event.target.files[x]);
+    }
   }
 
   plugins:object = {
@@ -78,6 +86,7 @@ export class GuiaComercialComponent {
     };
 
     this.arquivo.nativeElement.value = '';
+    this.galeria.nativeElement.value = '';
   }
 
   cadastrar(){

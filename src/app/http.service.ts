@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
   token = sessionStorage.getItem('usuario') ? JSON.parse(sessionStorage.getItem('usuario')).token : '';
-  endPoint = 'http://portal.test/api/';
- // endPoint = 'http://portal.test';
 
   headers = {
     headers: new HttpHeaders({
@@ -34,15 +33,15 @@ export class HttpService {
     })
   }
 
-    return this.http.post(this.endPoint + url, data, headers);
+    return this.http.post(environment.API + url, data, headers);
   }
 
   ApiPost(url, data){
-    return this.http.post(this.endPoint + url, data, this.headers);
+    return this.http.post(environment.API + url, data, this.headers);
   }
 
   ApiGet(url){
-    return this.http.get(this.endPoint + url, this.headers);
+    return this.http.get(environment.API + url, this.headers);
   }
 
   ApiGetNavigate(url){

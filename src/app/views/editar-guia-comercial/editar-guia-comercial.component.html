@@ -121,7 +121,12 @@
                 </div>
               </div>
             </div>
-            <div class="col"></div>
+            <div class="col">
+              <div class="form-group">
+                <label for="galeria">Galeria</label>
+                <input multiple accept="image/jpeg" required #galeria (change)="onChangegaleria($event)" type="file" style="padding: 3px 0.75rem !important;" class="form-control" id="galeria">
+              </div>
+            </div>
           </div><!-- fim row -->
           <div class="row">
             <div class="col">

@@ -9,24 +9,30 @@ import { NgProgressService } from 'ng2-progressbar';
 })
 export class VideosComponent implements OnInit {
 
-  video;
+  dados:any = {
+    link : null,
+    titulo : null,
+    descricao : null
+  };
   constructor(private http: HttpService, private progresso: NgProgressService) {}
 
   ngOnInit() {
   }
 
   cadastrar(){
-    if(!this.video)
+    if(!this.dados.link || !this.dados.titulo || !this.dados.descricao)
     {
-      swal('Atenção', 'O campo link é requerido', 'warning');
+      swal('Atenção', 'Os campos são requeridos', 'warning');
       return false;
     }
 
     this.progresso.start();
 
-    this.http.ApiPost('videos/cadastro', { nome : this.video } ).subscribe((response:any) => {
+    this.http.ApiPost('videos/cadastro', { link : this.dados.link, titulo : this.dados.titulo, descricao : this.dados.descricao } ).subscribe((response:any) => {
       swal('Sucesso', 'Cadastro realizado com sucesso.', 'success');
-      this.video = null;
+      this.dados.link = null;
+      this.dados.titulo = null;
+      this.dados.descricao = null;
       this.progresso.done();
     }, err => {
       swal('Error', err.error.resposta, 'error');
